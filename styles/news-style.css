@@ -36,10 +36,15 @@ header {
     opacity: .95;
     background: rgb(61,91,152);
     height: 50px;
+    z-index: 1;
 }
 
 /* 
 I fixed the header so it doesn't move regardless of scrolling 
+The z-index allows control over the stack level of an element's position. So the highed the z-index, the highter it appears on the z-axis.
+I like to compare to a deck of cards. The bottom card would be z-index: 0 and one directly above would be z-index:1 and the very top would be z-index: 52.
+In this case, we need to set a z-index to this element to ensure that appears above the other elements at all times, 
+Notice the difference when you scroll on the page and uncheck the z-index property in your Chrome developer tools. 
 */
 
 header a {
