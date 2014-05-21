@@ -117,6 +117,8 @@ article {
 
 /* 
 By setting float: left for all articles and adding a width, they can horizontally align. 
+Box-shadow is CSS3 property that allows you to add shadows to elements. The way the values work are best described here: 
+http://css-tricks.com/snippets/css/css-box-shadow/
 Box-sizing: borderbox; means that the width of the element includes the border, margin, and padding. VERY helpful so you don't have to calculate the paddings and margins yourself. 
 It makes the element behave the way you think it should. We don't review this in class but I recommend setting it as long as you understand how it works. 
 Check out this reference: http://css-tricks.com/box-sizing/
