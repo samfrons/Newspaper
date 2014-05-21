@@ -1,36 +1,71 @@
-@font-face {
-	font-family: 'AlphaMack AOE';
-	src: url('fonts/alphma.ttf');
-}
 
 @font-face {
     font-family: 'Headline Text';
-    src: url('http://addicaid.com/fonts/Headlinetext.ttf');   
+    src: url('fonts/Headlinetext.ttf');   
 }
+
+/* This loads a custom font file. I add the path in @font-face property and give it a name then use font-family on any element I want to apply it to.
+*/
 
 * {
     font-family: 'Georgia', serif;
     -webkit-font-smoothing: antialiased;
-    /*border: 1px solid #f15f66 !important;*/
 }
 
+/* 
+The asterix means these properities are applied to all elements.
+-webit-font-smoothing: antialiased is a great property that smoothes out the font pixels.
+Anti-aliasing, by definition, is a computer graphics technique used to add greater realism to a digital image by smoothing jagged edges on curved lines and diagonals.
+Delete the property and see the difference! 
+*/ 
+
 html, body {
-    height: 100%;
     font-size: 14px;
     padding: 0;
     margin: 0;
-    overflow: auto;
+    background: url(http://subtlepatterns.com/patterns/p6.png);
 }
-
-body {
-}
+/* 
+I added a background image for texture. This is an absolute link so an image from the web. 
+*/
 
 header {
-    position: fixed !important;
+    position: fixed;
     width: 100%;
     text-align: center;
     opacity: .95;
-    z-index: 1;
+    background: rgb(61,91,152);
+    height: 50px;
+}
+
+/* 
+I fixed the header so it doesn't move regardless of scrolling 
+*/
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+    padding: 22px 0 0 40px;
+    display: inline-block;
+    font-size: 16px;
+    background: url(../images/facebook.png);
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: 0 10px;
+    height: 50px;
+    font-weight: bold;
+}
+
+/* 
+Here I added a background image to the <a> tag and added padding so the text didn't run over it. 
+Play around with the values in Chrome developer tools to see how it behaves with different settings! 
+*/
+
+header:hover {
+    transition: 1s all ease;
+    cursor: pointer;
+    opacity: 1;
 }
 
 header h5 {
@@ -39,226 +74,102 @@ header h5 {
     padding: 1em 0 1em 0;
 }
 
+/* 
+Remember that margin and padding property values go top, right, bottom, left. In this case, I set the document font-size to 14px so 1em = 14px. 2em would equal 28px.
+*/
+
 .container {
     margin: 0 auto;
     height: 100%;
     max-width: 1440px;
     padding: 5em 2em 2em 2em;
+    overflow: auto;
 }
+/* 
+Here's where we center all the content with margin: 0 along with a max-width of 1440px so it scales down from there. 
+The overflow: auto allows us to have a height for a parent container for floated elements. Without this, it doesn't take on the height of its child floating elements.
+*/
 
 h1 {
     text-align: center;
-    font-family: Headline Text;
+    font-family: 'Headline Text', serif;
+    font-size: 4em;
+    font-weight: 200;
+    padding: 0 0 10px 0;
+    border-bottom: 2px solid black;
+    margin: 0 .5% 10px .5%;
+    opacity: .8;
 }
-
-
-
-
-.row {
-    display: block;
-}
-
-
 
 article {
-    box-sizing: border-box;
+    background: white;
     float: left;
+    width: 48%;
     max-width: 720px;
+    min-width: 340px;
     display: inline-block;
-    width: 50%;
+    margin: 1%;
+    padding: 10px;
+    box-shadow: 0 1px 2px gray;
+    box-sizing: border-box;
+    
 }
 
+/* 
+By setting float: left for all articles and adding a width, they can horizontally align. 
+Box-sizing: borderbox; means that the width of the element includes the border, margin, and padding. VERY helpful so you don't have to calculate the paddings and margins yourself. 
+It makes the element behave the way you think it should. We don't review this in class but I recommend setting it as long as you understand how it works. 
+Check out this reference: http://css-tricks.com/box-sizing/
+*/
+
 article h2 {
-    color: rgb(45,45,45);
+    color: rgb(71,71,71);
 
 }
 
 article h2:hover {
     color: black;
-    transition: .5s color ease;
+    transition: 2s color ease;
     cursor: pointer;
 }
+/* 
+The transition property allows it to fade in. which I find to be a nice effect. It's set in duration, property, and timing function. 
+Here's a great reference: https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_transitions
+*/
 
 article img {
-    height: 200px;
+    width: 50%;
     float: left;
-    margin: 0 10px 0 0 ;
+    margin: 5px 20px 0 0 ;
+    border: 4px solid #DEDEDE;
+    padding: 1px;
 }
+/* 
+Adding a border visually illustrates how padding works. 
+The padding is the space between the element content and its border while the margin is the space between the elements. 
+*/
 
 article p {
     text-align: justify;
-    padding: 0 10px 10px 0;
-    color: rgb(51,51,51);
-    line-height: 1.5em;
-}
-
-.box div {
-    display: block;
-    margin: 5%;
-    text-align: center;
-}
-
-.box span {
-    font-size: 4em;
-    font-weight: 100;
-}
-
-.box h1 {
-    background-color: rgba(232, 98, 0, 0.5);
-    color: white;
-    font-weight: 100;
-    font-size: 6em;
-    padding: 20px;
-    text-transform: uppercase;
-}
-
-.row {
-    display: block;
-    margin: 0;
-    padding: 0;
-    min-height: 300px;
-}
-
-.row .box2 {
-    display: block;
-    width: 49%;
-    padding: 0px;
-    margin: 0;
-    min-height: 300px;
-    float: left;
-    box-sizing: border-box;
-}
-
-.row .box2 div {
-    background-color: #fff;
-    background-color: #fff;
-    background-image: linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
-		linear-gradient(#eee .1em, transparent .1em);
-    background-size: 100% 1.2em;
-    background-size: 100% 1.2em;
-    min-height: 300px;
-}
-
-.floating {
-    float: left;
-    width: 49%;
-    box-sizing: border-box;
-    min-width: 340px;
-    max-width: 720px;
-    display: inline-block;
-    line-height: 1.5em;
-    margin: 10px .5% 10px .5%;
-    background-color: #fff;
-    background-color: #fff;
-    background-image: linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 82px, transparent 82px),
-		linear-gradient(#eee .1em, transparent .1em);
-    background-size: 100% 1.2em;
-    background-size: 100% 1.2em;
-    min-height: 300px;
-}
-
-.floating p {
-    text-align: justify;
-    margin: 1em 1em 0 2.5em;
-    color: gray;
-    font-weight: 200;
-    font-family: 'AlphaMack AOE';
-    font-weight: normal;
-    opacity: .9;
-    font-size: 3em;
-    line-height: 1em;
-}
-
-.box-shadow-preview {
-    position: relative;
-    background-color: #FFFFFF;
-    border-width: 0px;
-    border-style: solid;
-    border-color: #DDDDDD;
-    border-radius: 0px;
-    box-shadow: 0px 1px 4px 0px #99A3AD, 0px 0px 40px #EEEEEE;
+    color: rgb(81,81,81);
+    line-height: 1.8em;
 }
 
 
-
-.box-shadow-preview:before {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    top: 0px;
-    right: 10px;
-    bottom: 0px;
-    left: 10px;
-    border-radius: 0px;
-    box-shadow: 0px 0px 20px #2A2E31;
+/* 
+These are media queries, which change element properities based on screen size. 
+To read more about how they work, check out this reference: http://css-tricks.com/css-media-queries 
+Also please ask me about them if you want to know more. They are REALLY AWESOME. 
+*/
+@media (max-width: 1088px) {
+    h1 {
+        font-size: 3em;
+    }
 }
-
-.box-shadow-preview:after {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    top: 0px;
-    right: 10px;
-    bottom: 0px;
-    left: 10px;
-    border-radius: 0px;
-    box-shadow: 0px 0px 20px #2A2E31;
+@media (max-width: 821px) {
+    article {
+        width: 97%;
+    }
 }
-
-.leftfloat {
-    float: left;
-    width: 50%;
-    margin-right: 2%;
-}
-
-.leftfloat h4 {
-    text-align: center;
-    color: #cf730b;
-    font-weight: 400;
-    text-transform: capitalize;
-}
-
-.imgfloat {
-    float: left;
-}
-
-.imgfloat p {
-    color: rgb(100,100,100);
-    line-height: 2em;
-    line-height: 28px;
-}
-
-.gif {
-    border-radius: 100%;
-    width: 100%;
-    margin-right: 30px;
-}
-
-.relative {
-    position: relative;
-}
-
-.absolute {
-    position: absolute;
-    top: 20%;
-    font-size: 1.7vw;
-    color: white;
-    text-shadow: 0px 1px 2px black;
-    left: 20%;
-    text-align: center;
-    padding: 4%;
-    background: rgba(0,0,0,.3);
-    border-radius: 100%;
-}
-
-.absolute h3 {
-    margin-bottom: 0;
-}
-
-.absolute span {
-    display: block;
-    font-size: 1.2vw;
-}
-
 
 
