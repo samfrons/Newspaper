@@ -79,6 +79,61 @@ header h5 {
     padding: 1em 0 1em 0;
 }
 
+
+/* here is the nav menu */
+
+ul.nav li {
+    display: inline-block;
+    background-color: #226fbe;
+    border: 4px solid #226fbe;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+ul.nav {
+    background-color: #4593e3;
+    border-radius: 10px;
+}
+
+ul.nav li a {
+    text-decoration: none;
+    font-family: sans-serif;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+ul.nav li:hover {
+    background: transparent;
+   
+}
+
+ul.nav li:active {
+    top: 5px;
+}
+
+ul.nav li.push-button {
+    background: #cb4e4e;
+    color: #fff;
+    box-shadow: 0 6px #ab3c3c;
+    border-radius: 0 0 5px 5px;
+    border: 0px;
+}
+
+ul.nav li.push-button:hover {
+    box-shadow: 0 4px #ab3c3c;
+    top: 2px;
+    }
+
+ul.nav li.push-button:active {
+    box-shadow: 0 0 #ab3c3c;
+    top: 6px;
+}
+
+
+
 /* 
 Remember that margin and padding property values go top, right, bottom, left. In this case, I set the document font-size to 14px so 1em = 14px. 2em would equal 28px.
 */
@@ -163,16 +218,16 @@ article p {
 }
 
 
-/* 
+
 These are media queries, which change element properities based on screen size. 
 To read more about how they work, check out this reference: http://css-tricks.com/css-media-queries 
 Also please ask me about them if you want to know more. They are REALLY AWESOME. 
-*/
 @media (max-width: 1088px) {
     h1 {
         font-size: 3em;
     }
 }
+
 @media (max-width: 821px) {
     article {
         width: 97%;
