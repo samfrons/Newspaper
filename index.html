@@ -3,36 +3,151 @@
 	<head>
 		<title>News Paper</title>
 		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"> <!-- this gives the page a favicon (the little square image next to the title on the browser)--> 
-		<link rel="stylesheet" href="styles/news-style.css" >
+		<link rel="stylesheet" href="styles/news-style.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="http://cdn.sublimevideo.net/js/5yu505mq.js"></script>
+		<script type="text/javascript">
+
+
+
+		/* this writes <h1>hello world</h1> inside the dom
+		document.write('<h1>hello world</h1>');
+
+		function helloNav() {
+		document.getElementByClassName("nav").innerHTML = "Hello";
+		};
+
+		var nav = document.getElementByClassName('nav');
+
+		nav.appendChild("<h1>hi</h1>");
+	
+
+	here's some alerts 
+		var message = "<h1>" + "new element here!" + "</h1>";
+
+		function myAlert() {
+			alert(message);
+		};
+
+		console.log("hello");
+
+		var myArray = ["me", "you"];
+
+		document.write(myArray);
+
+		document.getElementByClassName("nav").appendChild(myArray);
+
+		nav.innerHTML = myArray;
+	*/
+
+		$(document).ready(function(){
+
+			/*
+			var myArray = ["<span>my</span>", "<span>array</span>"];
+			$("p#message").append(myArray);
+			*/
+
+			$(".toggle").click(function(){
+			   // $("p").hide();
+			    $( "p.toggled" ).slideToggle();
+			  });
+			$( "#go" ).click(function() {
+			  $( ".toggle" ).animate({
+			    width: "70%",
+			    opacity: 0.4,
+			    marginLeft: "0.6in",
+			    fontSize: "3em",
+			    borderWidth: "10px"
+			  }, 1500 );
+
+			});
+
+
+
+			$("body").hide();
+			$("body").fadeIn( "slow", function() {
+			//	make iframe
+			});
+
+
+			$(".sharing").hide();
+
+			$(".share").hover(function(){
+					$(".sharing").fadeIn( "slow");
+					$(".sharing").show();
+					$(".share-arrow").fadeOut( "slow");
+					$(".share-arrow").hide();
+
+			});
+
+			$(".share").mouseout(function(){
+					//alert("hey");
+					$(".sharing").hide();
+					$(".share-arrow").show();
+			});
+
+			$("#close").click(function(){
+				$(this).slideUp(1000);
+			});
+
+			
+			
+
+
+
+
+		});
+
+		</script>
 	</head>
 	<body>
+<!--
+Please note that you should replace the value of "data-player-kit" with your own player id.
+You can find your player’s id in the “Players” page of your site.
+-->
 		<header>
 			<a href="http://www.facebook.com">Like us on facebook!</a>
+
+				<img class="share share-arrow" src="images/share.png">
+				<img class="share sharing" src="images/sharing.png">
+
+				
 		</header>
+		
 		<div class="container">
+		<h2 id="close">close this</h2>
+				
+				
 			<h1>
 				The New York Code + Design Academy Times
 			</h1>
-
 				<ul class="nav">
+
 					<li>
 						<a href="#">
 							Menu item 1
 						</a>
 					</li>
 
-					<li>
+					<li id="go">
 						<a href="#">
 							Menu item 2
 						</a>
 					</li>
 
-					<li class="push-button">
-						<a href="#">
-							Menu item 2
+					<li class="push-button" onclick="myAlert()">
+						
+						 <a href="#" class="toggle">
+						 Toggle time
 						</a>
 					</li>
+
+					<li class="toggled"><p class="toggled">This is a paragraph.</p>
+				<p class="toggled">This is another paragraph.</p>
+				</li>
 				</ul>
+
+				<p id="message"></p>
 
 			<article class="news-article">
 				<h2>
@@ -48,6 +163,7 @@
 				<p>
 					"Dr. Grant, my dear Dr. Sattler. Welcome to Jurassic Park." They turn and look at the view again. It's beautiful vista, reminiscent of an African plain. A whole herd of dinosaurs crosses the plain, maybe a hundred that we see in a quick glance alone. "Ellie, they're absolutely - - they're moving in herds. They do move in herds!" "We were right!" "How did you do it?! How did you do this?!"
 				</p>
+
 				
 			</article>
 
@@ -65,6 +181,7 @@
 				<p>
 					"Dr. Grant, my dear Dr. Sattler. Welcome to Jurassic Park." They turn and look at the view again. It's beautiful vista, reminiscent of an African plain. A whole herd of dinosaurs crosses the plain, maybe a hundred that we see in a quick glance alone. "Ellie, they're absolutely - - they're moving in herds. They do move in herds!" "We were right!" "How did you do it?! How did you do this?!"
 				</p>
+
 			</article>
 
 			<article class="news-article">
